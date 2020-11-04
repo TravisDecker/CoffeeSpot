@@ -1,4 +1,4 @@
-package com.straylense.benchsecurewebapp.security;
+package com.straylense.benchsecurewebapp.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

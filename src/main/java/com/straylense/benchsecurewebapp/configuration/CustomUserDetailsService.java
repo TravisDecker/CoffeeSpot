@@ -1,4 +1,4 @@
-package com.straylense.benchsecurewebapp.security;
+package com.straylense.benchsecurewebapp.configuration;
 
 import com.straylense.benchsecurewebapp.domain.User;
 import com.straylense.benchsecurewebapp.domain.UserRepository;

@@ -4,13 +4,18 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.time.LocalDate;
 
 @RestController
 public class HomeResource {
 
     @GetMapping("/")
-    public String home() {
-        return ("<h1>Welcome</h1>");
+    public ModelAndView landing() {
+        ModelAndView mav = new ModelAndView("landing");
+        mav.addObject("date", LocalDate.now().toString());
+        return mav;
     }
 
     @GetMapping("/user")
