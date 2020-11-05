@@ -1,4 +1,4 @@
-package com.straylense.benchsecurewebapp.domain;
+package com.straylense.benchsecurewebapp.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
-@Table(name = "app_users")
+@Table(name = "app_user")
 @Getter
 @Setter
 public class User {
@@ -23,6 +23,13 @@ public class User {
 
     @NonNull
     private String password;
+
+    @NonNull
+    private String email;
+
+    private String firstName;
+
+    private String lastName;
 
     private String roles;
 

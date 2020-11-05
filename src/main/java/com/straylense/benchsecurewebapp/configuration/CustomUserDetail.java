@@ -1,6 +1,6 @@
 package com.straylense.benchsecurewebapp.configuration;
 
-import com.straylense.benchsecurewebapp.domain.User;
+import com.straylense.benchsecurewebapp.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
