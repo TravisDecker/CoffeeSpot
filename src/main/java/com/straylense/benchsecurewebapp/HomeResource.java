@@ -18,7 +18,7 @@ public class HomeResource {
         return mav;
     }
 
-    @GetMapping("/user")
+    @GetMapping("auth/user")
     public String user() {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -26,7 +26,7 @@ public class HomeResource {
         return (String.format("<h1>Welcome %s</h1>", currentPrincipalName));
     }
 
-    @GetMapping("/admin")
+    @GetMapping("auth/admin")
     public String admin() {
         return ("<h1>Welcome Admin</h1>");
     }

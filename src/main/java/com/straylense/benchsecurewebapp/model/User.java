@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -32,6 +33,9 @@ public class User {
     private String lastName;
 
     private String roles;
+
+    @OneToMany
+    List<User> friends;
 
     @Column(columnDefinition = "boolean default true")
     private boolean enabled;

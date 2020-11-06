@@ -8,9 +8,9 @@ import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
-@Table(name = "post")
 @Getter
 @Setter
+@Table(name = "post")
 public class CoffeePost {
 
     @Id
