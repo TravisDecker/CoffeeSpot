@@ -1,7 +1,7 @@
 package com.straylense.benchsecurewebapp.configuration;
 
 import com.straylense.benchsecurewebapp.model.User;
-import com.straylense.benchsecurewebapp.model.UserRepository;
+import com.straylense.benchsecurewebapp.repos.UserRepository;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

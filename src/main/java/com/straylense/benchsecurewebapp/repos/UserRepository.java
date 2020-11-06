@@ -1,5 +1,6 @@
-package com.straylense.benchsecurewebapp.model;
+package com.straylense.benchsecurewebapp.repos;
 
+import com.straylense.benchsecurewebapp.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

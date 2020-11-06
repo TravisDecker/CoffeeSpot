@@ -10,7 +10,7 @@
 <p>The site is currently under construction, stay tuned for updates.</p>
 
 
-<form:form action="/user/create" method="POST" modelAttribute="userCreationDTO">
+<form:form action="/signup" method="POST" modelAttribute="userCreationDTO">
     <form:label path="firstName">First Name:</form:label>
     <form:input path="firstName"/><br><br>
 
@@ -21,10 +21,14 @@
     <form:input path="username"/><br><br>
 
     <form:label path="email">Email Address:</form:label>
-    <form:input path="email"/><br><br>
+    <form:input path="email"/>
+    <%-- Show errors for email field --%>
+    <form:errors path="email"/><br><br>
 
     <form:label path="password">Password:</form:label>
-    <form:input path="password"/><br><br>
+    <form:password path="password"/>
+    <%-- Show errors for password field --%>
+    <form:errors path="password"/><br><br>
 
     <input type="submit" value="Submit">
 </form:form>

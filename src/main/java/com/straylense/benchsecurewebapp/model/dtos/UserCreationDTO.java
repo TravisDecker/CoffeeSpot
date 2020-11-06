@@ -1,10 +1,9 @@
-package com.straylense.benchsecurewebapp.model;
+package com.straylense.benchsecurewebapp.model.dtos;
 
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.lang.NonNull;
 
-import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 
