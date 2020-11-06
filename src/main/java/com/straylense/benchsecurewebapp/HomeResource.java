@@ -20,13 +20,12 @@ public class HomeResource {
 
     @GetMapping("auth/user")
     public String user() {
-
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentPrincipalName = authentication.getName();
         return (String.format("<h1>Welcome %s</h1>", currentPrincipalName));
     }
 
-    @GetMapping("auth/admin")
+    @GetMapping("/auth/admin")
     public String admin() {
         return ("<h1>Welcome Admin</h1>");
     }

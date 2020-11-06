@@ -26,9 +26,6 @@
     <form:label path="password">Password:</form:label>
     <form:input path="password"/><br><br>
 
-    <form:label path="password">Password:</form:label>
-    <form:input path="password"/><br><br>
-
     <input type="submit" value="Submit">
 </form:form>
 

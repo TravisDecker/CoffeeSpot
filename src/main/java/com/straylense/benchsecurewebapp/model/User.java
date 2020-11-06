@@ -1,6 +1,9 @@
 package com.straylense.benchsecurewebapp.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.lang.NonNull;
 
@@ -12,6 +15,9 @@ import java.util.UUID;
 @Table(name = "app_user")
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
     @Id
@@ -32,21 +38,27 @@ public class User {
 
     private String lastName;
 
-    private String roles;
+    @Column(columnDefinition = "varchar(255) default 'ROLE_USER'")
+    @Builder.Default
+    private String roles = "ROLE_USER";
 
     @OneToMany
     List<User> friends;
 
     @Column(columnDefinition = "boolean default true")
-    private boolean enabled;
+    @Builder.Default
+    private boolean enabled = true;
 
     @Column(columnDefinition = "boolean default true")
-    private boolean isAccountNonExpired;
+    @Builder.Default
+    private boolean isAccountNonExpired = true;
 
     @Column(columnDefinition = "boolean default true")
-    private boolean isAccountNonLocked;
+    @Builder.Default
+    private boolean isAccountNonLocked = true;
 
     @Column(columnDefinition = "boolean default true")
-    private boolean isCredentialsNonExpired;
+    @Builder.Default
+    private boolean isCredentialsNonExpired = true;
 
 }

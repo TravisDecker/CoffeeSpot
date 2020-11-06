@@ -19,16 +19,14 @@ public class UserCreationDTO {
     private String password;
 
     @NonNull
+    @Size(min = 8)
     private String confirmPassword;
 
     @NonNull
-    @Email
+    @Email(message = "Email should be valid")
     private String email;
 
     private String firstName;
 
     private String lastName;
-
-    @AssertTrue
-    private boolean confirmPasswordsMatch = password.matches(confirmPassword);
 }
