@@ -30,6 +30,7 @@
     <%-- Show errors for password field --%>
     <form:errors path="password"/><br><br>
 
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     <input type="submit" value="Submit">
 </form:form>
 

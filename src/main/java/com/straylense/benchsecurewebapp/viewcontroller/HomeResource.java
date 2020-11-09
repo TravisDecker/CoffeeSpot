@@ -1,4 +1,4 @@
-package com.straylense.benchsecurewebapp;
+package com.straylense.benchsecurewebapp.viewcontroller;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

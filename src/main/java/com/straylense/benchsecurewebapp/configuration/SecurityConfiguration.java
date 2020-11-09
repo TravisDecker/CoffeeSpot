@@ -19,32 +19,18 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         return new CustomUserDetailsService();
     }
 
-//    @Bean
-//    public DaoAuthenticationProvider authenticationProvider() {
-//        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-//        authProvider.setUserDetailsService(userDetailsService());
-//        authProvider.setPasswordEncoder(passwordEncoder());
-//        return authProvider;
-//    }
-
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-//        authProvider.setUserDetailsService(userDetailsService());
-//        authProvider.setPasswordEncoder(passwordEncoder());
-//        auth.authenticationProvider(authProvider);
         auth.userDetailsService(userDetailsService())
                 .passwordEncoder(passwordEncoder());
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.cors().and().csrf().disable();
-
         http.authorizeRequests()
                 .antMatchers("/auth/admin").hasRole("ADMIN")
                 .antMatchers("/auth/user", "/home").hasAnyRole("ADMIN", "USER")
-                .antMatchers("/", "/signup", "/about").permitAll()
+                .antMatchers("/", "/signup", "/about", "/search").permitAll()
                 .and().formLogin();
     }
 

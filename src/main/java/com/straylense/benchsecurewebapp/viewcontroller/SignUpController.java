@@ -1,4 +1,4 @@
-package com.straylense.benchsecurewebapp;
+package com.straylense.benchsecurewebapp.viewcontroller;
 
 import com.straylense.benchsecurewebapp.model.User;
 import com.straylense.benchsecurewebapp.model.dtos.UserCreationDTO;
@@ -36,6 +36,7 @@ public class SignUpController {
     @PostMapping
     public ModelAndView createUser(@Valid @ModelAttribute("UserCreationDTO") UserCreationDTO userCreationDTO,
                                    BindingResult bindingResult) {
+        //TODO FIX ERROR RESPONSE, atm returns 404
         if (bindingResult.hasErrors()) {
             return new ModelAndView("UserCreationDTO", bindingResult.getModel());
         }
@@ -65,5 +66,4 @@ public class SignUpController {
         });
         return errors;
     }
-
 }
