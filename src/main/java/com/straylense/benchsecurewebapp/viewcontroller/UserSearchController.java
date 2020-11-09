@@ -1,7 +1,7 @@
 package com.straylense.benchsecurewebapp.viewcontroller;
 
-import com.straylense.benchsecurewebapp.model.User;
-import com.straylense.benchsecurewebapp.repos.UserRepository;
+import com.straylense.benchsecurewebapp.controller.UserSearchService;
+import com.straylense.benchsecurewebapp.model.dtos.UserView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,11 +15,10 @@ import java.util.List;
 public class UserSearchController {
 
     @Autowired
-    UserRepository userRepository;
+    UserSearchService userSearchService;
 
     @GetMapping
-    public List<User> findUsersByUserName(@RequestParam(name = "username") String userName) {
-        return userRepository.findAllByUsernameContainingIgnoreCase(userName);
-
+    public List<UserView> findUsersByUserName(@RequestParam(name = "username") String userName) {
+        return userSearchService.getUsersByUsername(userName);
     }
 }
