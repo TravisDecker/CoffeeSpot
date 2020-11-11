@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -18,7 +19,10 @@ public class UserSearchController {
     UserSearchService userSearchService;
 
     @GetMapping
-    public List<UserView> findUsersByUserName(@RequestParam(name = "username") String userName) {
-        return userSearchService.getUsersByUsername(userName);
+    public ModelAndView findUsersByUserName(@RequestParam(name = "username") String userName) {
+        ModelAndView mav = new ModelAndView("usersearchpage");
+        List<UserView> userViews = userSearchService.getUsersByUsername(userName);
+        mav.addObject("users", userViews);
+        return mav;
     }
 }

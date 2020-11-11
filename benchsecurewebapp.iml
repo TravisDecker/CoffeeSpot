@@ -129,6 +129,7 @@
     <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-annotations-api:9.0.37" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.37" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.eclipse.jdt:ecj:3.18.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.servlet:jstl:1.2" level="project" />
     <orderEntry type="library" name="Maven: org.jeasy:easy-random-core:4.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.objenesis:objenesis:3.0.1" level="project" />
     <orderEntry type="library" name="Maven: io.github.classgraph:classgraph:4.8.29" level="project" />
