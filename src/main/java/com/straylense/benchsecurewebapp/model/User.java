@@ -7,7 +7,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.lang.NonNull;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -43,7 +51,10 @@ public class User {
     private String roles = "ROLE_USER";
 
     @OneToMany
-    List<User> friends;
+    List<User> friends = new ArrayList<>();
+
+    @OneToMany(fetch = FetchType.EAGER)
+    List<CoffeePost> posts = new ArrayList<>();
 
     @Column(columnDefinition = "boolean default true")
     @Builder.Default

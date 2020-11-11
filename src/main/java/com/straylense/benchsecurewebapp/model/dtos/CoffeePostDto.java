@@ -1,9 +1,11 @@
 package com.straylense.benchsecurewebapp.model.dtos;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
-public class CoffeePostCreationDTO {
+@Setter
+public class CoffeePostDto {
 
-    private String postBody;
+    private String body;
 }

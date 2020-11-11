@@ -14,9 +14,9 @@
         <th>Username</th>
         <th>First Name</th>
     </tr>
-    <c:forEach var="users" items="${users}">
+    <c:forEach var="user" items="${users}">
         <tr>
-            <td> Username: <c:out value="${users.userName}"/></td>
+            <td> Username: <c:out value="${user.userName}"/></td>
         </tr>
     </c:forEach>
 </table>
