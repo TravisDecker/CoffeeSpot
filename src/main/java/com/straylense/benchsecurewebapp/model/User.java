@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.lang.NonNull;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,8 +17,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.UUID;
 
 @Entity
 @Table(name = "app_user")
@@ -30,7 +31,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID userId;
+    private Long userId;
 
     @NonNull
     @Column(unique = true)
@@ -53,8 +54,9 @@ public class User {
     @OneToMany
     List<User> friends = new ArrayList<>();
 
-    @OneToMany(fetch = FetchType.EAGER)
-    List<CoffeePost> posts = new ArrayList<>();
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user",
+            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    private List<CoffeePost> posts = new LinkedList<>();
 
     @Column(columnDefinition = "boolean default true")
     @Builder.Default
