@@ -31,6 +31,7 @@ public class CoffeePost {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long postId;
 
+
     @ManyToOne(fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "user_id")

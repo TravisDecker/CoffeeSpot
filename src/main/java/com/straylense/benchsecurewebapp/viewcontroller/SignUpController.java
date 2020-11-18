@@ -1,8 +1,8 @@
 package com.straylense.benchsecurewebapp.viewcontroller;
 
+import com.straylense.benchsecurewebapp.controller.UserService;
 import com.straylense.benchsecurewebapp.model.User;
 import com.straylense.benchsecurewebapp.model.dtos.UserCreationDTO;
-import com.straylense.benchsecurewebapp.repos.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
@@ -26,7 +26,7 @@ import java.util.Map;
 public class SignUpController {
 
     @Autowired
-    UserRepository userRepository;
+    private UserService userService;
 
     @GetMapping
     public ModelAndView getCreateUserForm() {
@@ -37,6 +37,7 @@ public class SignUpController {
     public ModelAndView createUser(@Valid @ModelAttribute("UserCreationDTO") UserCreationDTO userCreationDTO,
                                    BindingResult bindingResult) {
         //TODO FIX ERROR RESPONSE, atm returns 404
+        //TODO Spam protection?
         if (bindingResult.hasErrors()) {
             return new ModelAndView("UserCreationDTO", bindingResult.getModel());
         }
@@ -48,7 +49,7 @@ public class SignUpController {
                 .firstName(userCreationDTO.getFirstName())
                 .lastName(userCreationDTO.getLastName())
                 .build();
-        userRepository.save(newUser);
+        userService.saveUser(newUser);
 
         ModelAndView mav = new ModelAndView("newusercreated");
         return mav;

@@ -5,7 +5,6 @@ import com.straylense.benchsecurewebapp.model.CoffeePost;
 import com.straylense.benchsecurewebapp.model.User;
 import com.straylense.benchsecurewebapp.model.dtos.CoffeePostDto;
 import com.straylense.benchsecurewebapp.repos.CoffeePostRepository;
-import com.straylense.benchsecurewebapp.repos.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +27,7 @@ public class CoffeePostController {
     private CoffeePostRepository coffeePostRepository;
 
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     @GetMapping
     public ModelAndView createCoffeePost() {
@@ -42,7 +41,7 @@ public class CoffeePostController {
         if (bindingResult.hasErrors()) {
             //TODO Handle error creating post
         }
-        User user = userRepository.findByUsername(principal.getName()).orElseThrow(() -> new NotFoundException("User not found"));
+        User user = userService.getUserByUserName(principal.getName());
 
         CoffeePost coffeePost = CoffeePost.builder()
                 .user(user)

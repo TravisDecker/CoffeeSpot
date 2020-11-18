@@ -21,7 +21,11 @@
             <td><c:out value="${user.userName}"/></td>
             <td><c:out value="${user.firstName}"/></td>
             <td><c:out value="${user.lastName}"/></td>
-            <td><a href="/auth/addFriend?${user.userName}"> Add Friend</a></td>
+            <td><form:form action="/auth/search" method="post">
+                <input type="hidden" value="${user.userName}">
+                <input type="submit" value="Follow User">
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            </form:form></td>
         </tr>
     </c:forEach>
 </table>
