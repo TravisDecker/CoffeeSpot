@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
 import java.security.Principal;
 import java.util.List;
 
@@ -34,7 +32,7 @@ public class UserSearchController {
     }
 
     @PostMapping
-    public RedirectView addUserByUserName(@Valid @NotBlank @RequestParam("username") String username,
+    public RedirectView addUserByUserName(@RequestParam("username") String username,
                                           Principal principal) throws NotFoundException {
 
         User user = userService.getUserByUserName(principal.getName());
