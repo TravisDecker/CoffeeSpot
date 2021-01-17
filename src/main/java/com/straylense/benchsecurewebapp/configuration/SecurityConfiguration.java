@@ -31,7 +31,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/auth/admin").hasRole("ADMIN")
                 .antMatchers("/auth/*", "/home").hasAnyRole("ADMIN", "USER")
                 .antMatchers("/", "/signup", "/about", "/search", "/coffeepost").permitAll()
-                .and().formLogin();
+                .and().formLogin()
+                .defaultSuccessUrl("/auth/feed", true);//defaultSuccessUrl is the login redirect.
     }
 
     //TODO THIS IS NOT A SECURE ENCODER - DEV ONLY

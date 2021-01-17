@@ -5,6 +5,7 @@
 
 <head>
     <title>CoffeeSpot Users</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>

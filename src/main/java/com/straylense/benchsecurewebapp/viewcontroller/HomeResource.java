@@ -18,6 +18,12 @@ public class HomeResource {
         return mav;
     }
 
+    @GetMapping("/main")
+    public ModelAndView mian() {
+        ModelAndView mav = new ModelAndView("main");
+        return mav;
+    }
+
     @GetMapping("auth/user")
     public String user() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

@@ -25,7 +25,7 @@ public class UserSearchController {
 
     @GetMapping
     public ModelAndView findUsersByUserName(@RequestParam(name = "username") String userName) {
-        ModelAndView mav = new ModelAndView("usersearchpage");
+        ModelAndView mav = new ModelAndView("usersearchresultspage");
         List<UserView> userViews = userService.getViewUsersByUsername(userName);
         mav.addObject("users", userViews);
         return mav;

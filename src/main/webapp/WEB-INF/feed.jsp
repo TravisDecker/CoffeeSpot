@@ -4,24 +4,8 @@
 
 <head>
     <title>CoffeeSpot</title>
-    <style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-        }
-
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-    </style>
+    <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
 <h1>CoffeeSpot</h1>
 <h2>Create a Post</h2>
 <form:form action="/auth/coffeepost" method="POST" modelAttribute="coffeePostDto">
@@ -45,5 +29,4 @@
     </c:forEach>
 </table>
 </body>
-
 </html>
