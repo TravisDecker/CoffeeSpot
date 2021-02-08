@@ -33,7 +33,7 @@ public class FeedController {
 
         List<CoffeePost> feedPosts = coffeePostRepository.findAllByUserInOrderByDateTimePostedDesc(feedUsers);
 
-        ModelAndView mav = new ModelAndView("main", "coffeePostDto", new CoffeePostDto());
+        ModelAndView mav = new ModelAndView("feed", "coffeePostDto", new CoffeePostDto());
         mav.addObject("feedPosts", feedPosts);
         return mav;
     }

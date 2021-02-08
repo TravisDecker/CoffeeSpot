@@ -20,7 +20,7 @@ public class HomeResource {
 
     @GetMapping("/main")
     public ModelAndView mian() {
-        ModelAndView mav = new ModelAndView("main");
+        ModelAndView mav = new ModelAndView("feed");
         return mav;
     }
 

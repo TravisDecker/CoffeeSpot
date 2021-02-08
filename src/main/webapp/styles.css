@@ -1,27 +1,119 @@
-body {
-    background-color: #181819;
-    /*    #926141*/
+
+.w3-theme-l5 {
+    color: #f5f7f8 !important;
+    background-color: #A18276 !important
 }
 
-h1 {
-    color: #8Fa9A4;
+.w3-theme-l4 {
+    color: #000 !important;
+    background-color: #f5f7f8 !important
 }
 
-h2, p, a {
-    color: #F2EED6;
+.w3-theme-l3 {
+    color: #000 !important;
+    background-color: #f5f7f8 !important
 }
 
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
+.w3-theme-l2 {
+    color: #000 !important;
+    background-color: #f5f7f8 !important
 }
 
-td, th {
-    border: 1px solid #8B8C83;
-    text-align: center;
-    padding: 8px;
+.w3-theme-l1 {
+    color: #f5f7f8 !important;
+    background-color: #736372 !important
 }
 
-tr:nth-child(even) {
-    background-color: #dddddd;
+.w3-theme-d1 {
+    color: #f5f7f8 !important;
+    background-color: #736372 !important
 }
+
+.w3-theme-d2 {
+    color: #f5f7f8 !important;
+    background-color: #736372 !important
+}
+
+.w3-theme-d3 {
+    color: #f5f7f8 !important;
+    background-color: #736372 !important
+}
+
+.w3-theme-d4 {
+    color: #f5f7f8 !important;
+    background-color: #736372 !important
+}
+
+.w3-theme-d5 {
+    color: #f5f7f8 !important;
+    background-color: #736372 !important
+}
+
+.w3-theme-light {
+    color: #000 !important;
+    background-color: #f5f7f8 !important
+}
+
+.w3-theme-dark {
+    color: #fff !important;
+    background-color: #303e45 !important
+}
+
+.w3-theme-action {
+    color: #fff !important;
+    background-color: #303e45 !important
+}
+
+.w3-theme {
+    color: #736372 !important;
+    background-color: #7A918D !important
+}
+
+.w3-text-theme {
+    color: #7A918D !important
+}
+
+.w3-border-theme {
+    border-color: #7A918D !important
+}
+
+.w3-hover-theme:hover {
+    color: #736372 !important;
+    background-color: #7A918D !important
+}
+
+.w3-hover-text-theme:hover {
+    color: #A18276 !important
+}
+
+.w3-hover-border-theme:hover {
+    border-color: #7A918D !important
+}
+
+/*body {*/
+/*    background-color: #181819;*/
+/*    !*    #926141*!*/
+/*}*/
+
+/*h1 {*/
+/*    color: #8fa9a4;*/
+/*}*/
+
+/*h2, p, a {*/
+/*    color: #f2eed6;*/
+/*}*/
+
+/*table {*/
+/*    font-family: arial, sans-serif;*/
+/*    border-collapse: collapse;*/
+/*}*/
+
+/*td, th {*/
+/*    border: 1px solid #8b8c83;*/
+/*    text-align: center;*/
+/*    padding: 8px;*/
+/*}*/
+
+/*tr:nth-child(even) {*/
+/*    background-color: #dddddd;*/
+/*}*/
